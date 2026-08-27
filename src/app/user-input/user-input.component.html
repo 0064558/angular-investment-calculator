@@ -24,7 +24,7 @@
 
     <div class="input-group">
         <p>
-            <label for="expected-return">Retorno Esperado: </label>
+            <label for="expected-return">Retorno Esperado (%): </label>
             <input id="expected-return" name="expected-return" type="number" min="0" step="0.01" required [(ngModel)]="enteredExpectedReturn" #expectedReturn="ngModel" [attr.aria-invalid]="expectedReturn.invalid && expectedReturn.touched" [attr.aria-describedby]="expectedReturn.invalid && expectedReturn.touched ? 'expected-return-error' : null" />
             @if (expectedReturn.invalid && expectedReturn.touched) {
                 <small id="expected-return-error" class="field-error">Informe um retorno igual ou maior que zero.</small>
@@ -32,7 +32,7 @@
         </p>
 
         <p>
-            <label for="duration">Duração: </label>
+            <label for="duration">Duração (Anos): </label>
             <input id="duration" name="duration" type="number" min="1" step="1" required [(ngModel)]="enteredDuration" #duration="ngModel" [attr.aria-invalid]="duration.invalid && duration.touched" [attr.aria-describedby]="duration.invalid && duration.touched ? 'duration-error' : null" />
             @if (duration.invalid && duration.touched) {
                 <small id="duration-error" class="field-error">Informe uma duração inteira de pelo menos um ano.</small>
