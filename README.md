@@ -1,27 +1,61 @@
-# EssentialsPractice
+# Calculadora de Investimentos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0-next.2.
+Aplicação Angular para simular a evolução de um investimento com aportes anuais e retorno esperado.
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Cálculo da projeção anual do investimento.
+- Comparação entre patrimônio acumulado e total investido.
+- Gráfico de evolução criado com SVG.
+- Resumo com patrimônio final, total investido e juros acumulados.
+- Formulário com validação e mensagens de erro.
+- Botão para limpar e reiniciar a simulação.
+- Modo claro e escuro com preferência salva no navegador.
+- Layout responsivo para desktop e dispositivos móveis.
+- Formatação monetária brasileira.
+- Testes unitários da regra de cálculo.
 
-## Code scaffolding
+## Tecnologias
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular 18
+- TypeScript
+- HTML e CSS
+- Angular Signals
+- Template-driven Forms
+- SVG
+- Jasmine/Karma
+
+## Conceitos praticados
+
+- Standalone Components.
+- Interpolação e bindings.
+- `ngModel` e `ngSubmit`.
+- Signals e `computed`.
+- Services e injeção de dependência.
+- Diretivas de controle `@if` e `@for`.
+- Pipes, incluindo `CurrencyPipe`.
+- Acessibilidade com labels, ARIA e estrutura semântica.
+- CSS responsivo, temas e preferência por movimento reduzido.
+
+## Executar localmente
+
+Instale as dependências e inicie o servidor de desenvolvimento:
+
+```bash
+npm install
+npm start
+```
+
+A aplicação ficará disponível em `http://localhost:4200/`.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm run build
+```
 
-## Running unit tests
+## Testes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+npm test -- --watch=false --browsers=ChromeHeadless
+```

@@ -15,10 +15,17 @@
   --text-muted: #b7d8cf;
   --border: rgba(131, 230, 192, 0.28);
   --danger: #ff9c9c;
+  --form-heading: #eefbf7;
+  --form-description: #c2e9e0;
   --form-background: linear-gradient(145deg, rgba(48, 126, 108, 0.98), rgba(33, 89, 75, 0.98));
   --input-background: rgba(16, 24, 22, 0.25);
   --input-border: rgba(194, 233, 224, 0.35);
+  --input-focus-background: rgba(16, 24, 22, 0.4);
+  --input-placeholder: rgba(238, 251, 247, 0.55);
   --button-text: #10221c;
+  --button-secondary-border: rgba(194, 233, 224, 0.5);
+  --button-secondary-text: #eefbf7;
+  --button-secondary-background: rgba(16, 24, 22, 0.14);
 }
 
 body.light-theme {
@@ -32,10 +39,17 @@ body.light-theme {
   --text-muted: #4c6960;
   --border: rgba(25, 123, 90, 0.22);
   --danger: #c03939;
+  --form-heading: #18302a;
+  --form-description: #4c6960;
   --form-background: linear-gradient(145deg, #e0f7ee, #b6e9d5);
   --input-background: rgba(255, 255, 255, 0.68);
   --input-border: rgba(25, 123, 90, 0.3);
+  --input-focus-background: rgba(255, 255, 255, 0.95);
+  --input-placeholder: rgba(24, 48, 42, 0.55);
   --button-text: #10221c;
+  --button-secondary-border: rgba(25, 123, 90, 0.35);
+  --button-secondary-text: #18302a;
+  --button-secondary-background: rgba(25, 123, 90, 0.1);
 }
 
 body {
@@ -63,4 +77,15 @@ app-root {
 
 .center {
   text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

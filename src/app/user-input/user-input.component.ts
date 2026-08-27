@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, type NgForm } from '@angular/forms';
 import { InvestmentService } from '../investment.service';
 
 @Component({
@@ -25,5 +25,14 @@ export class UserInputComponent {
       expectedReturn: this.enteredExpectedReturn(),
       duration: this.enteredDuration()
     });
+  }
+
+  onReset(form: NgForm): void {
+    form.resetForm();
+    this.enteredInitialInvestment.set(0);
+    this.enteredAnnualInvestment.set(0);
+    this.enteredExpectedReturn.set(5);
+    this.enteredDuration.set(10);
+    this.investmentService.clearResults();
   }
 }

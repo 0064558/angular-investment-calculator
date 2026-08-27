@@ -1,7 +1,26 @@
 @if (!results()) {
 <p class="center">Por favor insira os valores e pressione "Calcular".</p>
 } @else {
+@if (summary(); as summaryData) {
+<section class="summary" aria-labelledby="summary-title">
+    <h2 id="summary-title" class="visually-hidden">Resumo da simulação</h2>
+    <article class="summary-card">
+        <span>Patrimônio final</span>
+        <strong>{{ summaryData.finalValue | currency:'BRL' }}</strong>
+    </article>
+    <article class="summary-card">
+        <span>Total investido</span>
+        <strong>{{ summaryData.totalInvested | currency:'BRL' }}</strong>
+    </article>
+    <article class="summary-card highlight">
+        <span>Juros acumulados</span>
+        <strong>{{ summaryData.totalInterest | currency:'BRL' }}</strong>
+    </article>
+</section>
+}
+
 <table>
+    <caption>Projeção anual do investimento</caption>
     <thead>
         <tr>
             <th>Ano</th>

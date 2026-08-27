@@ -45,4 +45,8 @@ export class InvestmentService {
     
         this._resultData.set(annualData);
       }
+
+    clearResults(): void {
+        this._resultData.set(undefined);
+    }
 }
