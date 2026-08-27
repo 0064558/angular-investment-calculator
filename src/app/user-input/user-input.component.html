@@ -7,7 +7,10 @@
     <div class="input-group">
         <p>
             <label for="initial-investment">Investimento Inicial: </label>
-            <input id="initial-investment" name="initial-investment" type="number" min="0" step="0.01" required [(ngModel)]="enteredInitialInvestment" #initialInvestment="ngModel" [attr.aria-invalid]="initialInvestment.invalid && initialInvestment.touched" [attr.aria-describedby]="initialInvestment.invalid && initialInvestment.touched ? 'initial-investment-error' : null" />
+            <span class="input-affix">
+                <span class="affix affix-prefix" aria-hidden="true">R$</span>
+                <input id="initial-investment" name="initial-investment" type="text" inputmode="decimal" appNumberFormat="currency" required aria-label="Investimento inicial em reais" [(ngModel)]="enteredInitialInvestment" #initialInvestment="ngModel" [attr.aria-invalid]="initialInvestment.invalid && initialInvestment.touched" [attr.aria-describedby]="initialInvestment.invalid && initialInvestment.touched ? 'initial-investment-error' : null" />
+            </span>
             @if (initialInvestment.invalid && initialInvestment.touched) {
                 <small id="initial-investment-error" class="field-error">Informe um valor igual ou maior que zero.</small>
             }
@@ -15,7 +18,10 @@
 
         <p>
             <label for="annual-investment">Investimento Anual: </label>
-            <input id="annual-investment" name="annual-investment" type="number" min="0" step="0.01" required [(ngModel)]="enteredAnnualInvestment" #annualInvestment="ngModel" [attr.aria-invalid]="annualInvestment.invalid && annualInvestment.touched" [attr.aria-describedby]="annualInvestment.invalid && annualInvestment.touched ? 'annual-investment-error' : null" />
+            <span class="input-affix">
+                <span class="affix affix-prefix" aria-hidden="true">R$</span>
+                <input id="annual-investment" name="annual-investment" type="text" inputmode="decimal" appNumberFormat="currency" required aria-label="Investimento anual em reais" [(ngModel)]="enteredAnnualInvestment" #annualInvestment="ngModel" [attr.aria-invalid]="annualInvestment.invalid && annualInvestment.touched" [attr.aria-describedby]="annualInvestment.invalid && annualInvestment.touched ? 'annual-investment-error' : null" />
+            </span>
             @if (annualInvestment.invalid && annualInvestment.touched) {
                 <small id="annual-investment-error" class="field-error">Informe um valor igual ou maior que zero.</small>
             }
@@ -24,16 +30,22 @@
 
     <div class="input-group">
         <p>
-            <label for="expected-return">Retorno Esperado (%): </label>
-            <input id="expected-return" name="expected-return" type="number" min="0" step="0.01" required [(ngModel)]="enteredExpectedReturn" #expectedReturn="ngModel" [attr.aria-invalid]="expectedReturn.invalid && expectedReturn.touched" [attr.aria-describedby]="expectedReturn.invalid && expectedReturn.touched ? 'expected-return-error' : null" />
+            <label for="expected-return">Retorno Esperado: </label>
+            <span class="input-affix">
+                <input id="expected-return" name="expected-return" type="text" inputmode="decimal" appNumberFormat="percentage" required aria-label="Retorno esperado em porcentagem ao ano" [(ngModel)]="enteredExpectedReturn" #expectedReturn="ngModel" [attr.aria-invalid]="expectedReturn.invalid && expectedReturn.touched" [attr.aria-describedby]="expectedReturn.invalid && expectedReturn.touched ? 'expected-return-error' : null" />
+                <span class="affix affix-suffix" aria-hidden="true">% a.a.</span>
+            </span>
             @if (expectedReturn.invalid && expectedReturn.touched) {
                 <small id="expected-return-error" class="field-error">Informe um retorno igual ou maior que zero.</small>
             }
         </p>
 
         <p>
-            <label for="duration">Duração (Anos): </label>
-            <input id="duration" name="duration" type="number" min="1" step="1" required [(ngModel)]="enteredDuration" #duration="ngModel" [attr.aria-invalid]="duration.invalid && duration.touched" [attr.aria-describedby]="duration.invalid && duration.touched ? 'duration-error' : null" />
+            <label for="duration">Duração: </label>
+            <span class="input-affix">
+                <input id="duration" name="duration" type="number" inputmode="numeric" min="1" step="1" required aria-label="Duração em anos" [(ngModel)]="enteredDuration" #duration="ngModel" [attr.aria-invalid]="duration.invalid && duration.touched" [attr.aria-describedby]="duration.invalid && duration.touched ? 'duration-error' : null" />
+                <span class="affix affix-suffix" aria-hidden="true">anos</span>
+            </span>
             @if (duration.invalid && duration.touched) {
                 <small id="duration-error" class="field-error">Informe uma duração inteira de pelo menos um ano.</small>
             }

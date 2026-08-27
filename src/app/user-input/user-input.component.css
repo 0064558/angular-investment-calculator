@@ -64,7 +64,47 @@ input {
   background: var(--input-background);
   color: var(--text-main);
   font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+  text-align: left;
   transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.input-affix {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.input-affix input {
+  min-width: 0;
+}
+
+.affix {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0 0.7rem;
+  border: 1px solid var(--input-border);
+  background: var(--input-background);
+  color: var(--text-muted);
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 0.85rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.affix-prefix {
+  border-right: 0;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.affix-suffix {
+  border-left: 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.input-affix:focus-within .affix {
+  border-color: var(--primary);
 }
 
 input::placeholder {

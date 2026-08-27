@@ -1,11 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule, type NgForm } from '@angular/forms';
 import { InvestmentService } from '../investment.service';
+import { BrNumberInputDirective } from '../br-number-input.directive';
 
 @Component({
   selector: 'app-user-input',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, BrNumberInputDirective],
   templateUrl: './user-input.component.html',
   styleUrl: './user-input.component.css'
 })
