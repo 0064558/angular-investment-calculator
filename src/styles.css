@@ -15,6 +15,27 @@
   --text-muted: #b7d8cf;
   --border: rgba(131, 230, 192, 0.28);
   --danger: #ff9c9c;
+  --form-background: linear-gradient(145deg, rgba(48, 126, 108, 0.98), rgba(33, 89, 75, 0.98));
+  --input-background: rgba(16, 24, 22, 0.25);
+  --input-border: rgba(194, 233, 224, 0.35);
+  --button-text: #10221c;
+}
+
+body.light-theme {
+  --background-dark: #dbeee7;
+  --background-light: #f7fbf9;
+  --surface: rgba(255, 255, 255, 0.94);
+  --surface-highlight: rgba(48, 126, 108, 0.1);
+  --primary: #197b5a;
+  --primary-dark: #166b4f;
+  --text-main: #18302a;
+  --text-muted: #4c6960;
+  --border: rgba(25, 123, 90, 0.22);
+  --danger: #c03939;
+  --form-background: linear-gradient(145deg, #e0f7ee, #b6e9d5);
+  --input-background: rgba(255, 255, 255, 0.68);
+  --input-border: rgba(25, 123, 90, 0.3);
+  --button-text: #10221c;
 }
 
 body {
@@ -26,7 +47,12 @@ body {
     radial-gradient(circle at top, rgba(48, 126, 108, 0.3), transparent 35rem),
     linear-gradient(135deg, var(--background-light), var(--background-dark));
   color: var(--text-main);
+  color-scheme: dark;
   min-height: 100vh;
+}
+
+body.light-theme {
+  color-scheme: light;
 }
 
 app-root {

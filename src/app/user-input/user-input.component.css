@@ -4,7 +4,7 @@ form {
   padding: 1.5rem;
   border: 1px solid var(--border);
   border-radius: 1rem;
-  background: linear-gradient(145deg, rgba(48, 126, 108, 0.98), rgba(33, 89, 75, 0.98));
+  background: var(--form-background);
   box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.24);
 }
 
@@ -33,10 +33,10 @@ label {
 input {
   width: 100%;
   padding: 0.75rem 0.8rem;
-  border: 1px solid rgba(194, 233, 224, 0.35);
+  border: 1px solid var(--input-border);
   border-radius: 0.5rem;
   outline: none;
-  background: rgba(16, 24, 22, 0.25);
+  background: var(--input-background);
   color: var(--text-main);
   font-size: 1rem;
   transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
@@ -58,7 +58,7 @@ button {
   border: 0;
   border-radius: 0.5rem;
   background: linear-gradient(135deg, var(--primary), #b0f3d8);
-  color: #10221c;
+  color: var(--button-text);
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 0.04em;

@@ -1,0 +1,187 @@
+.charts {
+  width: min(50rem, calc(100% - 2rem));
+  margin: 2rem auto;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.3rem;
+  color: var(--primary-dark);
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+}
+
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+.section-description,
+.chart-header p,
+.chart-note {
+  margin-bottom: 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.section-description {
+  max-width: 19rem;
+  text-align: right;
+}
+
+.chart-card {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface);
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.18);
+}
+
+.chart-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.25rem 0;
+}
+
+.chart-header p {
+  margin-bottom: 0;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+}
+
+.legend-dot.balance {
+  background: var(--primary);
+}
+
+.legend-dot.invested {
+  background: #8aa8ff;
+}
+
+.chart-scroll {
+  overflow-x: auto;
+  padding: 1rem 1.25rem 0.75rem;
+}
+
+.line-chart {
+  display: block;
+  min-width: 38rem;
+  width: 100%;
+  height: auto;
+}
+
+.grid-line {
+  stroke: var(--border);
+  stroke-dasharray: 4 5;
+  stroke-width: 1;
+}
+
+.axis-line {
+  stroke: var(--text-muted);
+  stroke-width: 1;
+  opacity: 0.55;
+}
+
+.axis-label,
+.year-label {
+  fill: var(--text-muted);
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 11px;
+}
+
+.year-label {
+  text-anchor: middle;
+}
+
+.chart-line {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+}
+
+.balance-line {
+  stroke: var(--primary);
+}
+
+.invested-line {
+  stroke: #8aa8ff;
+  stroke-dasharray: 7 5;
+}
+
+.chart-point {
+  stroke: var(--surface);
+  stroke-width: 2;
+}
+
+.balance-point {
+  fill: var(--primary);
+}
+
+.invested-point {
+  fill: #8aa8ff;
+}
+
+.chart-note {
+  margin: 0.75rem 0 0;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .section-heading,
+  .chart-header {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .section-description {
+    max-width: none;
+    text-align: left;
+  }
+
+  .legend {
+    justify-content: start;
+  }
+}

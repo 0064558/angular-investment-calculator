@@ -1,0 +1,106 @@
+@if (results(); as data) {
+  <section class="charts" aria-labelledby="charts-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">VISÃO GERAL</p>
+        <h2 id="charts-title">Evolução do investimento</h2>
+      </div>
+      <p class="section-description">
+        Compare o patrimônio acumulado com o total efetivamente investido.
+      </p>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <h3>Patrimônio ao longo dos anos</h3>
+          <p>O crescimento considera os juros e os aportes anuais.</p>
+        </div>
+
+        <div class="legend" aria-label="Legenda do gráfico">
+          <span><i class="legend-dot balance"></i> Patrimônio</span>
+          <span><i class="legend-dot invested"></i> Total investido</span>
+        </div>
+      </div>
+
+      <div class="chart-scroll">
+        <svg
+          class="line-chart"
+          viewBox="0 0 800 285"
+          role="img"
+          aria-labelledby="chart-title chart-description"
+        >
+          <title id="chart-title">Evolução do patrimônio e do total investido</title>
+          <desc id="chart-description">
+            Gráfico de linhas com uma série para o patrimônio acumulado e outra
+            para o total investido em cada ano. Os valores detalhados também
+            estão disponíveis na tabela abaixo.
+          </desc>
+
+          @for (gridLine of gridLines(); track gridLine.percentage) {
+            <line
+              class="grid-line"
+              [attr.x1]="chartLeft"
+              [attr.x2]="chartRight"
+              [attr.y1]="gridLine.y"
+              [attr.y2]="gridLine.y"
+            />
+            <text class="axis-label" x="0" [attr.y]="gridLine.y + 4">
+              {{ gridLine.value | currency: 'BRL' : 'symbol' : '1.0-0' }}
+            </text>
+          }
+
+          <line
+            class="axis-line"
+            [attr.x1]="chartLeft"
+            [attr.x2]="chartLeft"
+            [attr.y1]="chartTop"
+            [attr.y2]="chartBottom"
+          />
+          <line
+            class="axis-line"
+            [attr.x1]="chartLeft"
+            [attr.x2]="chartRight"
+            [attr.y1]="chartBottom"
+            [attr.y2]="chartBottom"
+          />
+
+          <polyline class="chart-line invested-line" [attr.points]="investedLine()" />
+          <polyline class="chart-line balance-line" [attr.points]="valueLine()" />
+
+          @for (point of points(); track point.year) {
+            <circle
+              class="chart-point invested-point"
+              [attr.cx]="point.x"
+              [attr.cy]="point.investedY"
+              r="4"
+            >
+              <title>
+                Ano {{ point.year }}: total investido
+                {{ point.totalAmountInvested | currency: 'BRL' }}
+              </title>
+            </circle>
+            <circle
+              class="chart-point balance-point"
+              [attr.cx]="point.x"
+              [attr.cy]="point.valueY"
+              r="5"
+            >
+              <title>
+                Ano {{ point.year }}: patrimônio
+                {{ point.valueEndOfYear | currency: 'BRL' }}
+              </title>
+            </circle>
+            <text class="year-label" [attr.x]="point.x" y="263">
+              {{ point.year }}
+            </text>
+          }
+        </svg>
+      </div>
+    </div>
+
+    <p class="chart-note">
+      Os valores exatos continuam disponíveis na tabela para facilitar a consulta.
+    </p>
+  </section>
+}

@@ -1,4 +1,17 @@
 <header>
-    <img src="investment-calculator-logo.png" alt="Logo da Calculadora de Investimentos">
-    <h1>Calculadora de Investimentos</h1>
+    <div class="brand">
+        <img src="investment-calculator-logo.png" alt="">
+        <h1>Calculadora de Investimentos</h1>
+    </div>
+
+    <button
+        class="theme-toggle"
+        type="button"
+        (click)="toggleTheme()"
+        [attr.aria-label]="isDark() ? 'Ativar modo claro' : 'Ativar modo escuro'"
+        [attr.aria-pressed]="isDark()"
+    >
+        <span aria-hidden="true">{{ isDark() ? '☀' : '☾' }}</span>
+        {{ isDark() ? 'Modo claro' : 'Modo escuro' }}
+    </button>
 </header>
