@@ -1,0 +1,58 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 1.5rem 1rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: var(--primary);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.github-link:hover {
+  background: var(--surface-highlight);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.github-link:focus-visible,
+footer a:focus-visible {
+  outline: 3px solid rgba(131, 230, 192, 0.35);
+  outline-offset: 3px;
+}
+
+.github-link svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  fill: var(--text-main);
+}
+
+@media (max-width: 480px) {
+  footer {
+    flex-wrap: wrap;
+    padding-top: 1.25rem;
+  }
+}
