@@ -1,15 +1,33 @@
 header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 42rem;
   text-align: center;
-  margin: 3rem auto;
+  margin: 3rem auto 2rem;
+  padding: 0 1rem;
 }
 
 header img {
-  width: 5rem;
-  height: 5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   object-fit: contain;
   background-color: transparent;
+  filter: drop-shadow(0 0 0.75rem rgba(131, 230, 192, 0.25));
 }
 
 header h1 {
-  font-size: 1.5rem;
+  margin: 0;
+  color: var(--text-main);
+  font-size: clamp(1.35rem, 4vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
 }

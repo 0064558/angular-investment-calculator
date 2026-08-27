@@ -1,5 +1,5 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, computed, input, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { InvestmentService } from '../investment.service';
 
 @Component({
@@ -12,5 +12,5 @@ import { InvestmentService } from '../investment.service';
 export class InvestmentResultsComponent {
   constructor(private investmentService: InvestmentService) {}
 
-  results = computed(() => this.investmentService.resultData());
+  results = this.investmentService.resultData;
 }

@@ -1,4 +1,4 @@
-import { Component, output, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { InvestmentService } from '../investment.service';
 
@@ -15,14 +15,14 @@ export class UserInputComponent {
 
   enteredInitialInvestment = signal(0);
   enteredAnnualInvestment = signal(0);
-  enteredExpectedInvestment = signal(5);
+  enteredExpectedReturn = signal(5);
   enteredDuration = signal(10);
 
   onSubmit() {
     this.investmentService.onCalculateInvestmentResults({
       initialInvestment: this.enteredInitialInvestment(),
       annualInvestment: this.enteredAnnualInvestment(),
-      expectedReturn: this.enteredExpectedInvestment(),
+      expectedReturn: this.enteredExpectedReturn(),
       duration: this.enteredDuration()
     });
   }

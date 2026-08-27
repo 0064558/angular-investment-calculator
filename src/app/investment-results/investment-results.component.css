@@ -1,19 +1,70 @@
 table {
-  max-width: 50rem;
+  width: min(50rem, calc(100% - 2rem));
   margin: 2rem auto;
-  padding: 1rem;
-  table-layout: fixed;
-  border-spacing: 1rem;
-  text-align: right;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  border-spacing: 0;
+  background: var(--surface);
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.2);
+  text-align: center;
+  vertical-align: middle;
 }
 
 table thead {
-  font-size: 0.7rem;
-  color: #83e6c0;
+  background: rgba(131, 230, 192, 0.1);
+  color: var(--primary);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-table tbody {
+table th,
+table td {
+  padding: 0.9rem 1rem;
+}
+
+table th {
+  font-weight: bold;
+}
+
+table td {
   font-family: "Roboto Condensed", sans-serif;
-  font-size: 0.85rem;
-  color: #c2e9e0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(194, 233, 224, 0.1);
+}
+
+table tbody tr {
+  transition: background 160ms ease;
+}
+
+table tbody tr:hover {
+  background: var(--surface-highlight);
+}
+
+.center {
+  width: min(42rem, calc(100% - 2rem));
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface);
+  color: var(--text-muted);
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 600px) {
+  table {
+    display: block;
+    width: calc(100% - 2rem);
+    overflow-x: auto;
+    margin: 2rem 1rem;
+    white-space: nowrap;
+  }
+
+  table th,
+  table td {
+    padding: 0.8rem;
+  }
 }

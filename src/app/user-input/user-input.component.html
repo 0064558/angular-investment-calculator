@@ -1,26 +1,26 @@
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit()" #investmentForm="ngForm" novalidate>
     <div class="input-group">
         <p>
             <label for="initial-investment">Investimento Inicial: </label>
-            <input id="inicial-investment" name="initial-investment" type="number" [(ngModel)]="enteredInitialInvestment" />
+            <input id="initial-investment" name="initial-investment" type="number" min="0" step="0.01" required [(ngModel)]="enteredInitialInvestment" />
         </p>
 
         <p>
             <label for="annual-investment">Investimento Anual: </label>
-            <input id="annual-investment" name="annual-investment" type="number" [(ngModel)]="enteredAnnualInvestment" />
+            <input id="annual-investment" name="annual-investment" type="number" min="0" step="0.01" required [(ngModel)]="enteredAnnualInvestment" />
         </p>
     </div>
 
     <div class="input-group">
         <p>
-            <label for="expected-investment">Retorno Esperado: </label>
-            <input id="expected-investment" name="expected-investment" type="number" [(ngModel)]="enteredExpectedInvestment" />
+            <label for="expected-return">Retorno Esperado: </label>
+            <input id="expected-return" name="expected-return" type="number" min="0" step="0.01" required [(ngModel)]="enteredExpectedReturn" />
         </p>
 
         <p>
             <label for="duration">Duração: </label>
-            <input id="duration" name="duration" type="number" [(ngModel)]="enteredDuration" />
+            <input id="duration" name="duration" type="number" min="1" step="1" required [(ngModel)]="enteredDuration" />
         </p>
     </div>
-    <p><button type="submit">Calcular</button></p>
+    <p><button type="submit" [disabled]="investmentForm.invalid">Calcular</button></p>
 </form>
